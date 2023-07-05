@@ -8,8 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&display=swap" rel="stylesheet">
     <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
+    <style>
+        ul li .content
+        {
+            max-height: 0;
+            background: #303030;
+            padding: 0rem 1rem 0rem 1rem;
+        }
+        li input[type="radio"]:checked +label+.content
+        {
+            max-height: 600px;
+            padding: 1rem;
+        }
+        li input[type="radio"]:checked ~ label .plus
+        {
+            transform: rotate(135deg);
+        }
+    </style>
 </head>
 <body>
     <header class="bg-cover bg-center h-max" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.9) 100%),url(../src/background.jpg);">
@@ -40,9 +57,9 @@
             <h1 style="font-family: 'Nunito Sans', sans-serif;" class="text-5xl text-white text-center mb-6">Unlimited movies, TV shows and more</h1>
             <h3 class="text-2xl text-white text-center mb-6">Watch anywhere. Cancel anytime.</h3>
             <h4 class="text-xl text-white text-center mb-6">Ready to watch? Enter your email to create or restart your membership.</h4>
-            <div>
-                <input type="email" name="email" placeholder="Email address" class="p-4 py-3 rounded w-96 border-[0.5px] text-white" style="background-color: rgba(41, 41, 41, 0.555);">
-                <button class=" bg-[#E50914] hover:bg-[#d20711] px-7 pt-[0.57rem] pb-[0.80rem] ml-1 rounded text-white text-center text-xl font-medium">Get Started</button>
+            <div class="flex gap-2 justify-center flex-wrap items-center w-[90vw] md:flex-row">
+                <input type="email" name="email" placeholder="Email address" class="p-4 py-3 rounded border-[0.5px] text-white w-[80%] md:w-96" style="background-color: rgba(41, 41, 41, 0.384);">
+                <button class=" bg-[#E50914] hover:bg-[#d20711] px-7 pt-[0.57rem] pb-[0.80rem] rounded text-white text-center text-xl font-medium">Get Started</button>
             </div>
         </div>
     </header>
@@ -54,8 +71,8 @@
                 <h3 class="text-2xl text-white text-center md:text-left">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h3>
             </div>
             <div class="basis-2/4 flex">
-                <img src="../src/1st-TV-removebg-preview.png" alt="tv-1" class="w-[50rem] m-auto relative z-10">
-                <video autoplay="true" playsinline muted loop src="../src/1st-TV-video.mp4" class="relative -top-2 -left-[87%] w-[73%]"></video>
+                <img src="../src/1st-TV.png" alt="tv-1" class="w-[50rem] m-auto relative z-10">
+                <video autoplay="true" playsinline muted loop src="../src/1st-TV-video.mp4" class="relative mt-[-10%] -left-[87%] w-[73%]"></video>
             </div>
         </div>
         <div class=" absolute left-0 w-full h-2 bg-zinc-800"></div>
@@ -76,7 +93,7 @@
             </div>
             <div class="basis-2/4 flex">
                 <img src="../src/2nd-TV.png" alt="tv-1" class="w-[50rem] relative z-10">
-                <video autoplay="true" playsinline muted loop src="../src/2nd-TV-video.mp4" class="relative w-[63%] -top-20 -left-[82%]"></video>
+                <video autoplay="true" playsinline muted loop src="../src/2nd-TV-video.mp4" class="relative w-[63%] mt-[-30%] -left-[82%]"></video>
             </div>
         </div>
         <div class=" absolute left-0 w-full h-2 bg-zinc-800"></div>
@@ -90,8 +107,63 @@
             </div>
         </div>
         <div class=" absolute left-0 w-full h-2 bg-zinc-800"></div>
-        
     </div>
-
+    <div id="faq" class="text-center bg-black h-max">
+        <div class="pt-20 pb-5">
+            <h1 style="font-family: 'Nunito Sans', sans-serif;" class="text-4xl text-white font-black mb-6">Frequently Asked Questions</h1>
+        </div>
+        <div id="questions" class=" text-white px-10 lg:pl-32">
+            <ul class="w-auto lg:mr-32 ">
+                <li class="bg-[#2d2d2d] mb-2">
+                    <input type="radio" id="q-1" name="select" class="hidden">
+                    <label for="q-1" class="flex items-center justify-between transition-colors duration-200 hover:bg-[#4e4e4e]">
+                        <div class="text-left p-5 py-6 text-2xl font-medium">What is Netflix?</div>
+                        <div class="font-medium text-5xl mr-10 transition-all duration-200 plus">+</div>
+                    </label>
+                    <div class="text-left overflow-hidden transition-all duration-200 content p-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo suscipit, distinctio non recusandae dolor modi, quasi perferendis eius beatae tempora. Velit officiis iste consequatur. Ea adipisci at amet molestiae.</div>
+                </li>
+                <li class="bg-[#2d2d2d] mb-2">
+                    <input type="radio" id="q-2" name="select" class="hidden">
+                    <label for="q-2" class="flex items-center justify-between transition-colors duration-200 hover:bg-[#4e4e4e]">
+                        <div class="text-left p-5 py-6 text-2xl font-medium">How much does Netflix cost?</div>
+                        <div class="font-medium text-5xl mr-10 transition-all duration-200 plus">+</div>
+                    </label>
+                    <div class="text-left overflow-hidden transition-all duration-200 content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo suscipit, distinctio non recusandae dolor modi, quasi perferendis eius beatae tempora. Velit officiis iste consequatur. Ea adipisci at amet molestiae.</div>
+                </li>
+                <li class="bg-[#2d2d2d] mb-2">
+                    <input type="radio" id="q-3" name="select" class="hidden">
+                    <label for="q-3" class="flex items-center justify-between transition-colors duration-200 hover:bg-[#4e4e4e]">
+                        <div class="text-left p-5 py-6 text-2xl font-medium">Where can I watch?</div>
+                        <div class="font-medium text-5xl mr-10 transition-all duration-200 plus">+</div>
+                    </label>
+                    <div class="text-left overflow-hidden transition-all duration-200 content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo suscipit, distinctio non recusandae dolor modi, quasi perferendis eius beatae tempora. Velit officiis iste consequatur. Ea adipisci at amet molestiae.</div>
+                </li>
+                <li class="bg-[#2d2d2d] mb-2">
+                    <input type="radio" id="q-4" name="select" class="hidden">
+                    <label for="q-4" class="flex items-center justify-between transition-colors duration-200 hover:bg-[#4e4e4e]">
+                        <div class="text-left p-5 py-6 text-2xl font-medium">How do I cancel?</div>
+                        <div class="font-medium text-5xl mr-10 transition-all duration-200 plus">+</div>
+                    </label>
+                    <div class="text-left overflow-hidden transition-all duration-200 content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo suscipit, distinctio non recusandae dolor modi, quasi perferendis eius beatae tempora. Velit officiis iste consequatur. Ea adipisci at amet molestiae.</div>
+                </li>
+                <li class="bg-[#2d2d2d] mb-2">
+                    <input type="radio" id="q-5" name="select" class="hidden">
+                    <label for="q-5" class="flex items-center justify-between transition-colors duration-200 hover:bg-[#4e4e4e]">
+                        <div class="text-left p-5 py-6 text-2xl font-medium">What can I watch on Netflix?</div>
+                        <div class="font-medium text-5xl mr-10 transition-all duration-200 plus">+</div>
+                    </label>
+                    <div class="text-left overflow-hidden transition-all duration-200 content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo suscipit, distinctio non recusandae dolor modi, quasi perferendis eius beatae tempora. Velit officiis iste consequatur. Ea adipisci at amet molestiae.</div>
+                </li>
+                <li class="bg-[#2d2d2d]">
+                    <input type="radio" id="q-6" name="select" class="hidden">
+                    <label for="q-6" class="flex items-center justify-between transition-colors duration-200 hover:bg-[#4e4e4e]">
+                        <div class="text-left p-5 py-6 text-2xl font-medium">Is Netflix good for kids?</div>
+                        <div class="font-medium text-5xl mr-10 transition-all duration-200 plus">+</div>
+                    </label>
+                    <div class="text-left overflow-hidden transition-all duration-200 content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quo suscipit, distinctio non recusandae dolor modi, quasi perferendis eius beatae tempora. Velit officiis iste consequatur. Ea adipisci at amet molestiae.</div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
